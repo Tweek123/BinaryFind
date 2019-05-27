@@ -1,8 +1,10 @@
 import Stat from './Stat.js'
 import Stats from './checkStats.js'
+import binaryFind from './binaryFind.js';
+import { isArray } from 'util';
 
 
-let Errs = new Stats(["ElementEr", "ArrayEr", "FuncEr"]);
+let Errs = new Stats(["ElementEr", "ArrayEr"]);
 
 let errIsANum = new Stat( function (el) {
     if(typeof(el) !== 'number') {
@@ -28,12 +30,12 @@ let errIsANaN = new Stat( function (el) {
 
 let errIsANotArrOfNum = new Stat( function (mass) {
     let Err = false;
-    mass.map(function(el) {
-        if(typeof(el) !== 'number') {
+    for(let i=0;i<mass.length;i++){
+        console.log(mass[i]);
+        if(typeof(mass[i]) !== 'number') {
             Err = true;
-        }
-      });
-      
+        } 
+    }     
       return Err;
 },
 "isANotArrayOfNumber", false, "ArrayEr"
@@ -41,18 +43,19 @@ let errIsANotArrOfNum = new Stat( function (mass) {
 
 let errArrayHasNaN = new Stat( function (mass) {
     let Err = false;
-    mass.map(function(el) {
-        if(Number.isNaN(el)) {
+    for(let i=0;i<mass.length;i++) {
+        if(Number.isNaN(mass[i])) {
             Err = true;
         }
-      });
+    }
       return Err;
 },
 "ArrayHasNaN", false, "ArrayEr"
 )
 
+
 Errs.addStats([errIsANum,errIsANaN],"ElementEr");
 Errs.addStats([errIsANotArrOfNum,errArrayHasNaN],"ArrayEr");
-console.log(Errs.checkStats("ArrayEr",[NaN,,NaN]));
-console.log([,,]);
+
+
 export { Errs }
