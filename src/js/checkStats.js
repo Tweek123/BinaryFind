@@ -3,7 +3,6 @@ class checkStats {
         this.types = types;
         this.stats = new Array(types.length); 
         this.initStats();
-        
     }
 
     initStats() {
@@ -12,8 +11,7 @@ class checkStats {
             this.stats[i].arrayOfStat = [];
             this.stats[i].type = this.types[i];
         }
-        
-        }
+    }
 
     addStats(stats,type) {
         this.stats.map(function(kindOfStat) {
@@ -30,12 +28,27 @@ class checkStats {
                 stats.arrayOfStat[0].forEach(stat => {
                     stat = stat.checkStat(param);
                     checkedStats.push(stat);
-                    console.log(stat);
                 });
             }
           });
          
         return checkedStats;
+    }
+
+
+    findStat(type,name) {
+        let findedStat;
+
+        this.stats.map(function(stats) {
+            if(stats.type === type) {
+                stats.arrayOfStat[0].forEach(stat => {
+                    if(stat.statName === name) {
+                        findedStat = stat; 
+                    }
+                });
+            }
+          });
+        return findedStat;
     }
 }
 

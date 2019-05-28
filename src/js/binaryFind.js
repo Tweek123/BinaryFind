@@ -1,4 +1,5 @@
 function binaryFind (mass, element) {
+
         let sortMass = sortArray([...mass]);
         let length = sortMass.length;
         let left = 0;
@@ -9,13 +10,10 @@ function binaryFind (mass, element) {
         ret.notFind = false;
         ret.findIndex;
         ret.toLong = false; 
-    
-        setTimeout(() => {
-            run = false;
-            ret.toLong = true;
-        }, 6000);
+        let nowTime = new Date().getTime();
+        let interTime = nowTime+1000;
 
-        while(run) {
+        while(nowTime <= interTime) {
             if(left > right) {
                 ret.notFind = true;
                 return ret;
@@ -31,7 +29,10 @@ function binaryFind (mass, element) {
                 ret.findIndex = i;
                 return ret;
             }
+            nowTime = new Date().getTime();
         }
+        
+        ret.toLong=true;
         return ret;
 }
 
@@ -40,10 +41,9 @@ function sortfunction(a, b){
     return res;
   }
 
-  function sortArray(mass) {
-      
-        mass.sort(sortfunction);   
-        return mass;
+function sortArray(mass) {  
+    mass.sort(sortfunction);   
+    return mass;
 }
 
 export default binaryFind
