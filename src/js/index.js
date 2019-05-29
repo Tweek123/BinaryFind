@@ -3,7 +3,13 @@
 // another js file (example)
 //import Stat from './Stat.js'
 import { Errs } from './createErrors.js'
-import { TestErIsANaN } from './createTests.js'
 import  binFind  from './binaryFind.js'
+import  Tests  from './createTests.js'
+import  binFindMain  from './binFindMain.js'
 
-let answer = binFind([2,1,3,4,5,6],10);
+let inputMass =document.getElementById('input-mass');
+let inputEl = document.getElementById('input-el');
+let log = document.getElementById('log');
+let buttonSolve = document.getElementById('button-solve');
+
+var binaryFind = new binFindMain(inputMass,inputEl,buttonSolve,log,Errs,Tests,binFind);

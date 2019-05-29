@@ -8,8 +8,9 @@ function binaryFind (mass, element) {
         let run = true;
         let ret = new Object;
         ret.notFind = false;
-        ret.findIndex;
+        ret.findIndex = null;
         ret.toLong = false; 
+        ret.Found = false; 
         let nowTime = new Date().getTime();
         let interTime = nowTime+1000;
 
@@ -27,6 +28,7 @@ function binaryFind (mass, element) {
             }
             else if(sortMass[i] === element) {
                 ret.findIndex = i;
+                ret.Found = true;
                 return ret;
             }
             nowTime = new Date().getTime();

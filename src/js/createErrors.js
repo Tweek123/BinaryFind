@@ -12,7 +12,7 @@ let errIsANum = new Stat( function (el) {
         return false;
     }
 },
-"isANotNum", false, "ElementEr"
+"ErisANotNum", false, "ElementEr"
 )
 
 let errIsANaN = new Stat( function (el) {
@@ -23,7 +23,7 @@ let errIsANaN = new Stat( function (el) {
         return false;
     }
 },
-"isANaN", false, "ElementEr"
+"ErisANaN", false, "ElementEr"
 )
 
 let errIsANotArrOfNum = new Stat( function (mass) {
@@ -35,7 +35,7 @@ let errIsANotArrOfNum = new Stat( function (mass) {
     }     
       return Err;
 },
-"isANotArrayOfNumber", false, "ArrayEr"
+"ErisANotArrayOfNumber", false, "ArrayEr"
 )
 
 let errArrayHasNaN = new Stat( function (mass) {
@@ -47,7 +47,7 @@ let errArrayHasNaN = new Stat( function (mass) {
     }
       return Err;
 },
-"ArrayHasNaN", false, "ArrayEr"
+"ErArrayHasNaN", false, "ArrayEr"
 )
 
 

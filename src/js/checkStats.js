@@ -22,6 +22,7 @@ class checkStats {
     }
 
     checkStats(type, param) {
+        
         let checkedStats = [];
         this.stats.map(function(stats) {
             if(stats.type === type) {
