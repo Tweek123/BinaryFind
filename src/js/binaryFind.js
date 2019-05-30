@@ -1,6 +1,7 @@
 function binaryFind (mass, element) {
 
         let sortMass = sortArray([...mass]);
+
         let length = sortMass.length;
         let left = 0;
         let right = length -1;

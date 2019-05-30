@@ -151,10 +151,12 @@ let TestBinFindAnswer = new Stat( function () {
     [1,10,3,9,4,5,6,7,8,2],
     [1,2,3,6,7,8,9,10,4,5],
     [8,9,10,1,2,3,4,5,6,7],
-    [8,9,10,5,6,7,11,14,15,1336,229], 
+    [8,9,10,5,6,7,11,14,15,1336,229],
+    [1.2,3,4.2,1,2.2,9,3,7,2,1.5],
+    [-1.2,-3,4.2,1,2.2,-9,3,-7,-2,1] 
     ]; 
-    let testingVal = [2,5,3,4,7,9,10,15];
-    let testExpect = [1,4,2,3,6,8,9,8];
+    let testingVal = [2,5,3,4,7,9,10,15,2.2,-1.2];
+    let testExpect = [1,4,2,3,6,8,9,8,4,4];
     let testingFunc = binFind;
     let testFailed = false;
     let chechedTestStat = new Array(testingVal.length);
